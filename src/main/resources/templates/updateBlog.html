@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<h1>Изменение статьи</h1>
+<form action="/blog/updateBlog" method="post">
+    <input name="id" type="hidden" class="form-control" id="id" placeholder="" value="" th:value="${element.id}" required="">
+    <input type="title" name="title" placeholder="Введите название статьи" class="form-control" value="" th:value="${element.title}">
+    <input name="description" placeholder="Введите полный текст статьи" class="form-control" value="" th:value="${element.description}">
+    <button type="submit" class="btn btn-success">Изменить</button>
+</form>
+</body>
+</html>
